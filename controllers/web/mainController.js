@@ -109,7 +109,7 @@ router.put("/updateEvent/:id", async (req, res, next) => {
               [field]: updatedValue,
               event_endDate: moment(job_startDate).add(
                 updatingValue,
-                "seconds"
+                "minutes"
               )
             }
           },
@@ -130,7 +130,7 @@ router.put("/updateEvent/:id", async (req, res, next) => {
             $set: {
                event_endDate: moment(job_startDate).add(
                 updatingValue + event.event_sla,
-                "seconds"
+                "minutes"
               )
             }
           },
@@ -218,7 +218,7 @@ router.post("/event", async (req, res, next) => {
 
   let endDate = moment(job_startDate).add(
     existingEventSla + req.body.event_sla,
-    "seconds"
+    "minutes"
   );
 
   console.log(moment(job_startDate).format("MMMM Do YYYY, h:mm:ss a"));
