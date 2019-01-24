@@ -11,6 +11,9 @@ var eventSchema = new mongoose.Schema({
     event_status:{
         type:String
     },
+    event_signal:{
+        type:String
+    },
     event_startDate:{
         type:Date
     },

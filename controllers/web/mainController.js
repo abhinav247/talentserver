@@ -237,6 +237,7 @@ router.post ('/event', async (req, res, next) => {
     event_description: req.body.event_description,
     event_status: req.body.event_status,
     event_sla: req.body.event_sla,
+    event_signal:req.body.event_signal,
     event_startDate: moment (),
     event_endDate: endDate,
   };
