@@ -14,7 +14,7 @@ router.use (
 );
 
 router.get ('/jobs', (req, res, next) => {
-  Job.find ().populate ('eventList').exec (function (err, Jobs) {
+  Job.find().sort({job_entryDate: 'desc'}).populate ('eventList').exec (function (err, Jobs) {
     if (err) return console.error (err);
     else {
       res.send ({
@@ -55,6 +55,7 @@ router.post ('/postjob', function (req, res, next) {
             job_description: req.body.job_description,
             events: req.body.events,
             job_startDate: moment (),
+            job_entryDate:moment()
           },
           function (err, Job) {
             if (err) {

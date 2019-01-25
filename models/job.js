@@ -26,6 +26,9 @@ var JobSchema = new mongoose.Schema({
   ],
   job_startDate: {
     type: Date
+  },
+  job_entryDate :{
+    type:Date
   }
 });
 
